@@ -112,12 +112,12 @@ form{
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   background: #00BCD4;
+  cursor: default;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
 }
 
 .btn:hover{
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 @-webkit-keyframes rise{
@@ -138,6 +138,18 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     opacity: 1;
     margin-top: 10px;
   }
+}
+
+.error{
+  display: none;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+  font-size: 1.2em;
+  opacity: .5
+
+    
 }
 
 .clone{
@@ -318,6 +330,11 @@ footer p{
   #imc{
     width: 70px;
     height: 70px;
+  }
+
+  .error{
+    width: 90%;
+    text-align: justify;
   }
 
   .clone{
