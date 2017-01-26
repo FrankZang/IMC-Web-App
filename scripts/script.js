@@ -2,10 +2,13 @@ $(document).ready(function(){
 
     $('.input').keyup(function(){
 
-        if($('#input1').val().length > 0 && $('#input2').val().length > 0){
+        inputValue1 = $('#input1').val();
+        inputValue2 = $('#input2').val();
+
+        if(inputValue1 > 0 && inputValue2 > 0){
             $('#btn').addClass('ready');
         }else{
-            $('#btn').removeClass('ready').addClass('wait');
+            $('#btn').removeClass('ready');
         }
 
     })
