@@ -3,10 +3,9 @@
     <head>
         <title>Índice de Massa Corporal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#0097a7">
         <link rel="stylesheet" href="styles/style.css">
         <link href="images/fav-icon.png" rel="icon" type="image/x-icon" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto|Carme" rel="stylesheet">
-
     </head>
     <body>
         <header>
@@ -17,8 +16,8 @@
         <div class="input-area">
 
         <form class="form">
-            <input class="input" type="text" pattern="[0-9]*" name="weight" maxlength="6" placeholder="Peso" autofocus>
-            <input class="input" type="text" pattern="[0-9]*" name="height" maxlength="6" placeholder="Altura" autofocus>
+            <input class="input" id="input1" type="text" pattern="[0-9]*" name="weight" maxlength="6" placeholder="Peso" autofocus>
+            <input class="input" id="input2" type="text" pattern="[0-9]*" name="height" maxlength="6" placeholder="Altura">
             <!--type="number" não foi usado por questões estéticas-->
         </form>
             <button type="button" class="btn" id="btn">CALCULAR</button>
@@ -26,7 +25,7 @@
 
         </div>
         <div class="error">
-            <p>Algo saiu errado, certifique-se de ter preenchido os dados corretamente, digite seu peso no primeiro campo, e sua altura no segundo</p>            
+            <p>Algo saiu errado, certifique-se de ter preenchido os dados corretamente, digite seu peso no primeiro campo, e altura no segundo.</p>            
         </div>
         <div class="clone hidden" id="clone">
             <div class="result"><h1 id="indice"></h1><div class="imc" id="imc"></div></div>
@@ -41,7 +40,6 @@
         <div id="append" class="append">
         </div>
         </div>
-        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
         <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="scripts/script.js"></script>
     </body>
