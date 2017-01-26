@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    $('.input').keyup(function(){
+
+        if($('#input1').val().length > 0 && $('#input2').val().length > 0){
+            $('#btn').addClass('ready');
+        }else{
+            $('#btn').removeClass('ready').addClass('wait');
+        }
+
+    })
+
+    //checa se há dados nos campos de peso e altura
+
+
     $('#btn').click(function(){        
         var weight = $('input[name=weight]').val(),
             height = $('input[name=height]').val();
@@ -29,10 +42,10 @@ $(document).ready(function(){
             //os valores da tabela de peso minino e máximo só tem valores pares, esta condição converte os valores,quando necessário.
 
         var a = 150;
-        var e = 202;
+        var b = 202;
         var heights = [];
 
-        for (var i = a; i < e; i+= 2) {
+        for (var i = a; i < b; i+= 2) {
             heights.push(i);
         };
 
@@ -78,7 +91,6 @@ $(document).ready(function(){
 
         var result = create;
                     $('.imc').text(simc);
-                    $('#indice').text(down);
                     $('#minWeight').text(minWeight + " kg");
                     $('#maxWeight').text(maxWeight + " kg");
 
@@ -88,21 +100,27 @@ $(document).ready(function(){
 
             if(imc <= 18.599){
                 result;
+                $('#indice').text(down);
             }
-            else if(imc > 18.6 && imc <= 24.99){
+            else if(imc > 18.6 && imc <= 24.999){
                 result;
+                $('#indice').text(ideal);;
             }
             else if(imc >= 25.0 && imc <= 29.99){
                 result;
+                $('#indice').text(ideal);;
             }
             else if(imc >= 30.0 && imc < 34.99){
                 result;
+                $('#indice').text(high);;
             }
             else if(imc >= 35.0 && imc < 39.99){
                 result;
+                $('#indice').text(high);;
             }
             else if(imc >= 40.0){
                 result;
+                $('#indice').text(high);;
             }
             else {
                 $('.error').fadeIn('fast').addClass('remove');

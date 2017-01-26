@@ -4,7 +4,7 @@ html, body{
   margin: auto;
   padding: 0;
   background: #f0f0f0;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
 
 }
 
@@ -37,7 +37,6 @@ header h1{
 }
 
 .content{
-  /*height: 100vh;*/
   max-width: 1500px;
   margin: auto;
 }
@@ -84,7 +83,7 @@ form{
   padding: 10px 5px 5px;
   outline: none;
   border: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   font-size: 1.5em;
   text-align: center;
   color: rgba(0, 0, 0, 1);
@@ -103,21 +102,29 @@ form{
   padding: 10px 20px;
   outline: none;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   font-size: 1em;
   font-weight: 700;
   color: #ffffff;
+  background: #a8a5a5;
   border-radius: 2px;
   text-align:center;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  background: #00BCD4;
   cursor: default;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover{
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+wait{
+  background: #a8a5a5;
+}
+
+.ready{
+  background: #00BCD4;
 }
 
 @-webkit-keyframes rise{
@@ -156,7 +163,7 @@ form{
   width: 500px;
   margin: 510px auto 30px;
   border-radius: 2px;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
   -webkit-transition: all .2s ease-in-out;
@@ -281,21 +288,8 @@ form{
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: #f0f0f0;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
 
-}
-
-footer{
-  width: 100%;
-  height: 50px;
-  padding-top: 20px;
-  margin: 30px auto 0;
-  background: #303f9f;
-  color: #ffffff;
-}
-
-footer p{
-  margin: 0 0 0 20px;
 }
 
 @media screen and (max-width:550px){
