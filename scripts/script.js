@@ -29,7 +29,7 @@ $(document).ready(function(){
             }
             //condição caso o user entre com um valor não decimal, altura minima de 2 metros e 50 cm ou 2.5
 
-    if(weight != 0 && height != 0 && height >= 1.50){
+    if(weight && height != 0 && height >= 1.50){
 
         var imc = weight / (height * height);
 
