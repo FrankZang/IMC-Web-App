@@ -97,7 +97,8 @@ $(document).ready(function(){
                     $('#minWeight').text(minWeight + " kg");
                     $('#maxWeight').text(maxWeight + " kg");
 
-
+        $('.input-area').toggleClass('toup')
+        $('#arrow').toggleClass('hidden')
         $(".remove").remove()
         //não ultilizado na primeira abordagem, mas remove o resultado antigo numa segunda checagem do imc
 
@@ -128,13 +129,22 @@ $(document).ready(function(){
             else {
                 $('.error').fadeIn('fast').addClass('remove');
             }
-       
+            
             
             var create = $('#clone').clone().removeClass('hidden').addClass('remove').appendTo('#append');
 
         $('input[name=weight]').val('');
         $('input[name=height]').val('');
-        //limpa os campos de peso e altura após a checagem.
+        $('#btn').removeClass('ready');
+        //limpa os campos de peso e altura após a checagem e retorna o botão ao estado inicial.
+
         };
     });
+
+        $('#arrow').click(function(){
+            $(this).toggleClass('hidden');
+            $('.remove').addClass('fade');
+            $('.input-area').removeClass('toup');
+            $('#input1').focus();
+        })
 });

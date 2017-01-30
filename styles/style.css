@@ -1,11 +1,11 @@
 html, body{
   width: 100%;
-  height: 101vh;
+  height: 100vh;
   margin: auto;
   padding: 0;
   background: #f0f0f0;
   font-family: sans-serif;
-
+  overflow: hidden;
 }
 
 header{
@@ -26,6 +26,8 @@ header{
   font-weight: bold;
   font-size: 1.2;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 999;
 }
 
 
@@ -37,6 +39,7 @@ header h1{
 }
 
 .content{
+  width: 100%;
   max-width: 1500px;
   margin: auto;
 }
@@ -50,6 +53,7 @@ header h1{
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -59,6 +63,8 @@ header h1{
   padding: 20px 0;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 form{
@@ -115,6 +121,59 @@ form{
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+@keyframes fadein{
+  from{
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+  }to{
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.arrow{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -20px auto 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: #00BCD4;
+  position: relative;
+  z-index: 9999;
+  opacity: 0;
+  animation-name: fadein;
+  animation-delay: .4s;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+  transition: all .2s ease-in-out;
+}
+
+.arrow img{
+  opacity: .5;
+}
+
+.arrow:hover{
+  background: #d5d5d5;
+}
+
+.toup{
+  margin-top: -250px;
+  opacity: 0;
+}
+
 wait{
   background: #a8a5a5;
 }
@@ -130,7 +189,7 @@ wait{
     margin-top: 500px;
   }to{
     opacity: 1;
-    margin-top: 10px;
+    margin-top: 50px;
   }
 }
 
@@ -140,7 +199,7 @@ wait{
     margin-top: 500px;
   }to{
     opacity: 1;
-    margin-top: 10px;
+    margin-top: 50px;
   }
 }
 
@@ -158,7 +217,7 @@ wait{
 
 .clone{
   width: 500px;
-  margin: 510px auto 30px;
+  margin: 50px auto 30px;
   border-radius: 2px;
   font-family: sans-serif;
   background: #fff;
@@ -176,6 +235,26 @@ wait{
   animation-fill-mode: forwards;
 }
 
+@keyframes fadeout{
+  from{
+    opacity: 1;
+    margin-top: 50px;
+  }to{
+    opacity: 0;
+    margin-top: 100px
+  }
+}
+
+
+.fade{
+  animation-name: fadeout;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+
 .scale{
   width: 100%;
   margin: 20px auto 0;
@@ -185,7 +264,7 @@ wait{
 
 
 .scale p{
-  margin: 25px auto;
+  margin: 40px auto;
   width: 90%;
   display: flex;
   flex-wrap: nowrap;
@@ -210,6 +289,7 @@ wait{
 
 .hidden{
   display: none;
+  opacity: 0;
 }
 
 .result{
@@ -289,15 +369,18 @@ wait{
 
 }
 
-@media screen and (max-width:550px){
-
-  header h1{
+@media screen and (max-width:500px){
+    header h1{
     padding-left: 20px;
   }
 
   .input-area{
     width: 95%;
     margin-top: 20px;
+  }
+
+  .toup{
+    margin-top: -200px;
   }
 
   .form{
@@ -312,6 +395,11 @@ wait{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+  }
+
+  .arrow{
+    width: 50px;
+    height: 50px;
   }
 
   .append{

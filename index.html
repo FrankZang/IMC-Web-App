@@ -4,13 +4,15 @@
         <title>Índice de Massa Corporal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#0097a7">
-        <link rel="stylesheet" href="styles/style.css">
-        <link href="images/fav-icon.png" rel="icon" type="image/x-icon" />
+        <link rel="stylesheet" href="styles/style.css">        <link href="images/fav-icon.png" rel="icon" type="image/x-icon"/>
     </head>
     <body>
         <header>
             <h1>IMC</h1>
         </header>
+            <div class="arrow hidden" id="arrow">
+                <img src="images/arrow.png" alt="Arrow down">
+            </div>
         <div class="content">
             
         <div class="input-area">
@@ -21,7 +23,6 @@
             <!--type="number" não foi usado por questões estéticas-->
         </form>
             <button type="button" class="btn" id="btn">CALCULAR</button>
-
 
         </div>
         <div class="error">
@@ -41,6 +42,6 @@
         </div>
         </div>
         <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="scripts/script.js"></script>
+        <script type="text/javascript" src="scripts/script.js" async></script>
     </body>
 </html>
