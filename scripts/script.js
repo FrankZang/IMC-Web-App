@@ -97,8 +97,8 @@ $(document).ready(function(){
                     $('#minWeight').text(minWeight + " kg");
                     $('#maxWeight').text(maxWeight + " kg");
 
-        $('.input-area').toggleClass('toup')
-        $('#arrow').toggleClass('hidden')
+        $('#toup').addClass('toup');
+        $('#clear').toggleClass('hidden')
         $(".remove").remove()
         //não ultilizado na primeira abordagem, mas remove o resultado antigo numa segunda checagem do imc
 
@@ -131,7 +131,7 @@ $(document).ready(function(){
             }
             
             
-            var create = $('#clone').clone().removeClass('hidden').addClass('remove').appendTo('#append');
+            var create = $('#clone').clone().removeClass('hidden').addClass('remove').prependTo('#append');
 
         $('input[name=weight]').val('');
         $('input[name=height]').val('');
@@ -141,7 +141,7 @@ $(document).ready(function(){
         };
     });
 
-        $('#arrow').click(function(){
+        $('#clear').click(function(){
             $(this).toggleClass('hidden');
             $('.remove').addClass('fade');
             $('.input-area').removeClass('toup');
