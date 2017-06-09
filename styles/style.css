@@ -145,9 +145,7 @@ p.min-weight, p.max-weight {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	left: 0;right: 0;
-	bottom: 30px;
+	margin-top: 50px;
 	transform: scale(0);
 	transition: transform .3s ease;
 	outline: none;
