@@ -29,8 +29,26 @@ opacity: .8
 	justify-content: center;
 	align-items: center;
 	width: 95%;
-	min-height: 600px;
+	min-height: 450px;
 	margin: auto;
+}
+
+.intro {
+	transition: all .3s ease;
+	pointer-events: visible;
+}
+
+.intro__out {
+	opacity: 0;
+	transform: translateY(-110%);
+	pointer-events: none;
+}
+
+.instructions {
+	max-width: 800px;
+	width: 100%;
+	text-align: center;
+	opacity: .8
 }
 
 .input-area, .form {
@@ -41,9 +59,8 @@ opacity: .8
 .input-area {
 	flex-direction: column;
 	align-items: center;
-	margin: 10px 0 20px;
+	margin: 10px auto 20px;
 	max-width: 250px;
-	padding: 20px 40px;
 	width: 90%;
 }
 
@@ -56,9 +73,10 @@ opacity: .8
 .input {
 	border: none;
 	outline: none;
-	width: 100px;
+	width: 90px;
 	border-bottom: 2px solid rgba(0, 0, 0, .6);
 	background: transparent;
+	color: rgba(0, 0, 0, .8);
 	font-size: 1.2em;
 	text-align: center;
 	padding-left: 5px;
@@ -70,24 +88,26 @@ opacity: .8
 }
 
 .imc-btn {
-	margin: 10px 0 0 0;
+	margin: 20px 0 0 0;
 	padding: 10px 15px;
-	background: transparent;
-	color: rgba(0, 0, 0, .6);
+	background: #939393;
+	color: #fff;
 	border: none;
 	outline: none;
 	border-radius: 3px;
 	font-family: 'Roboto', Arial, sans-serif;
 	font-size: 1em;
+	letter-spacing: 1px;
 	font-weight: 700;
 	cursor: pointer;
 	transition: all .3s ease;
+	pointer-events: none;
 }
 
 .imc-btn__active {
-	background: rgba(0, 151, 167, .8);
-	color: rgba(0, 0, 0, .8);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .3)
+	background: #31a9b6;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+	pointer-events: visible;
 
 }
 
@@ -107,7 +127,7 @@ opacity: .8
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 	background: #fff;
 	opacity: 0;
-	transform: translateY(30%);
+	transform: translateY(0);
 	transition: all .3s ease;
 	will-change: transform;
 	pointer-events: none;
@@ -115,7 +135,7 @@ opacity: .8
 
 .result-card__visible {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(-50%);
 	pointer-events: visible;
 }
 
@@ -124,6 +144,12 @@ opacity: .8
 	justify-content: space-between;
 	align-items: center;
 	width: 90%;
+}
+
+.indice {
+    font-size: 2em;
+    color: #0097a7;
+    opacity: .8;
 }
 
 .comment, .scale {
@@ -146,7 +172,7 @@ p.min-weight, p.max-weight {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 50px;
+	margin-top: -110px;
 	transform: scale(0);
 	transition: transform .3s ease;
 	outline: none;
@@ -168,7 +194,7 @@ p.min-weight, p.max-weight {
 	outline: none;
 	background: #fff;
 	border-radius: 100%;
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, .3);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 	cursor: pointer;
 	opacity: .8
 }

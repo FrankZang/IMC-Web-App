@@ -8,6 +8,8 @@ const weightOut = document.querySelectorAll('.weight');
 const IMCOut = document.querySelector('#imc');
 const IMCBtn = document.querySelector('#btn');
 const eraseBtn = document.querySelector('.erase');
+const intro = document.querySelector('.intro');
+const result_card = document.querySelector('.result-card');
 
 function getValue () {
 	let weight = inputs[0].value;
@@ -79,13 +81,18 @@ function comparator () {
 };
 
 function showCard () {
-	document.querySelector('.result-card').classList.add('result-card__visible');
+	intro.classList.add('intro__out');
+	// result_card.addEventListener('animationend', () => {
+	// 	console.log('cabo')
+	// });
+	result_card.classList.add('result-card__visible');
 	eraseBtn.classList.add('erase__active');
 	originalState();
 };
 
 function eraseData () {
-	document.querySelector('.result-card').classList.remove('result-card__visible');
+	result_card.classList.remove('result-card__visible');
+	intro.classList.remove('intro__out');
 	eraseBtn.classList.remove('erase__active');
 }
 
