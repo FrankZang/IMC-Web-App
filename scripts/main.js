@@ -1,5 +1,3 @@
-const weigthAndHeight = {};
-
 let IMC = {};
 
 const inputs = document.querySelectorAll('.input');
@@ -17,7 +15,7 @@ function getValue () {
 
 	if (weight != 0 && height != 0) {
 		IMCCalculator(weight, height);
-	}	
+	}
 	
 };
 
@@ -82,9 +80,6 @@ function comparator () {
 
 function showCard () {
 	intro.classList.add('intro__out');
-	// result_card.addEventListener('animationend', () => {
-	// 	console.log('cabo')
-	// });
 	result_card.classList.add('result-card__visible');
 	eraseBtn.classList.add('erase__active');
 	originalState();
@@ -102,8 +97,8 @@ function originalState () {
 	IMCBtn.classList.remove('imc-btn__active');
 }
 
-function check (e) {
-	e.addEventListener('keypress', () => {
+function checkForValue (e) {
+	e.addEventListener('keydown', () => {
 		let weight = inputs[0].value;
 		let height = inputs[1].value;
 
@@ -117,7 +112,7 @@ function check (e) {
 	})
 }
 
-Array.prototype.forEach.call(inputs, check);
+Array.prototype.forEach.call(inputs, checkForValue);
 
 IMCBtn.addEventListener('click', getValue);
 

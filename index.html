@@ -15,13 +15,13 @@
         </header>
         <div class="content">
             <div class="intro">
-              <div class="instructions"><p>Insira os dados abaixo, apenas números.</p></div>
-
+<!--               <div class="instructions"><p>Insira os dados abaixo, <span style="text-transform: uppercase;">apenas números</span>.</p></div>
+ -->
             <div class="input-area" id="toup">
 
             <form class="form">
-                <input class="input" type="number" pattern="[0-9]*" name="weight" maxlength="3" placeholder="Peso" autofocus>
-                <input class="input" type="number" pattern="[0-9]*" name="height" maxlength="3" placeholder="Altura">
+                <input value="55" class="input" type="number" pattern="[0-9]*" name="weight" maxlength="3" placeholder="Peso" autofocus>
+                <input value="184" class="input" type="number" pattern="[0-9]*" name="height" maxlength="3" placeholder="Altura">
             </form>
                 <button type="button" class="imc-btn" id="btn">CALCULAR</button>
             </div>
@@ -34,8 +34,8 @@
             <p>Seu Índice de Massa Corporal é <span class="imc" id="imc"></span>.</p>
             </div>
             <div class="scale">
-                 <p class="min-weight">Peso mínimo <span class="weight"></span></p>
-                 <p class="max-weight">Peso máximo <span class="weight"></span></p>
+                 <div class="weight-container"><p>Peso mínimo</p> <span class="scale-separator"></span> <span class="weight"></span></div>
+                 <div class="weight-container"><p>Peso máximo</p> <span class="scale-separator"></span> <span class="weight"></span></div>
             </div>
         </div>
         <div class="erase">
