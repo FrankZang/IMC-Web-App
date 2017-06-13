@@ -95,6 +95,8 @@ function originalState () {
 	inputs[0].value = '';
 	inputs[1].value = '';
 	IMCBtn.classList.remove('imc-btn__active');
+	label[0].classList.remove('input-label__active');
+	label[1].classList.remove('input-label__active');
 }
 
 function checkForValue (e) {
