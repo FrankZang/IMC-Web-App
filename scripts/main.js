@@ -119,3 +119,25 @@ IMCBtn.addEventListener('click', getValue);
 document.querySelector('#clear').addEventListener('click', eraseData);
 
 
+const label = document.querySelectorAll('.input-label');
+
+// inputs[0].addEventListener('focus', focus);
+// inputs[0].addEventListener('blur', blur);
+
+function focus () {
+	this.parentNode.children[0].classList.add('input-label__active');
+}
+
+function blur () {
+	if (this.value == 0) {
+		this.parentNode.children[0].classList.remove('input-label__active');
+	}
+}
+
+Array.prototype.forEach.call(inputs, focusChange);
+
+
+function focusChange (e) {
+	e.addEventListener('focus', focus);
+	e.addEventListener('blur', blur)
+}
