@@ -88,7 +88,7 @@ opacity: .8
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
 	background: transparent;
 	color: rgba(0, 0, 0, .8);
-	font-size: 16px;
+	font-size: 1em;
 	padding: 4px 0 2px;
 	transition: all .5s ease;
 	position: relative;
@@ -102,7 +102,7 @@ opacity: .8
 
 
 .input-label {
-	font-size: 16px;
+	font-size: 1em;
 	color: rgba(0,0,0, .4);
 	transform: translateY(15%);
 	transform-origin: bottom left;
