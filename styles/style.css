@@ -80,7 +80,11 @@ body,html {
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
 	background: transparent;
 	color: rgba(0, 0, 0, .8);
+<<<<<<< HEAD
 	font-size: 1.2em;
+=======
+	font-size: 1em;
+>>>>>>> b3b2070cb3bc2ca214333110ed2dce63fa1b2544
 	padding: 4px 0 2px;
 	transition: all .5s ease;
 	position: relative;
@@ -94,9 +98,14 @@ body,html {
 
 
 .input-label {
+<<<<<<< HEAD
 	font-size: 1.2em;
 	font-weight: 400;
 	color: rgba(0,0,0, 0.37);
+=======
+	font-size: 1em;
+	color: rgba(0,0,0, .4);
+>>>>>>> b3b2070cb3bc2ca214333110ed2dce63fa1b2544
 	transform: translateY(15%);
 	transform-origin: bottom left;
 	cursor: text;
