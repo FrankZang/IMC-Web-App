@@ -21,8 +21,8 @@ function getValue () {
 
 function IMCCalculator (weight, height) {
 
-	if (height <= 2) {
-		height = height;
+	if (height <= 2.0) {
+		height = height || height.replace(".", ",");
 		IMC.height = height * 100;
 	}
 	else {
@@ -105,23 +105,6 @@ function originalState () {
 	label[0].classList.remove('input-label__active');
 	label[1].classList.remove('input-label__active');
 }
-
-function checkForValue (e) {
-	e.addEventListener('keydown', () => {
-		let weight = inputs[0].value;
-		let height = inputs[1].value;
-
-		if (weight != 0 && height != 0) {
-			
-			IMCBtn.classList.add('imc-btn__active');
-
-		}else {
-			IMCBtn.classList.remove('imc-btn__active');
-		}
-	})
-}
-
-Array.prototype.forEach.call(inputs, checkForValue);
 
 IMCBtn.addEventListener('click', getValue);
 

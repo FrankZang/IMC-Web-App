@@ -133,12 +133,6 @@ body,html {
 	font-weight: 700;
 	cursor: pointer;
 	transition: all .3s ease;
-	pointer-events: none;
-}
-
-.imc-btn__active {
-	pointer-events: visible;
-
 }
 
 .error {
