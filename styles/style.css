@@ -62,13 +62,16 @@ body,html {
 	margin: 10px 0;
 }
 
+.input-box {
+	display: inline;;
+}
 
 .input {
 	border: none;
 	outline: none;
 	width: 100%;
 	max-width: 130px;
-	border-bottom: 1px solid rgba(0, 0, 0, .2);
+	border-bottom: 2px solid rgba(0, 0, 0, .2);
 	background: transparent;
 	color: rgba(0, 0, 0, .8);
 	font-size: 1.2em;
@@ -76,13 +79,16 @@ body,html {
 	transition: all .5s ease;
 	position: relative;
 	z-index: 2;
+	caret-color: #0097a7
+}
+
+.input:hover {
+	border-bottom: 2px solid rgba(0, 0, 0, .5)
 }
 
 .input:focus {
 	border-color: #0097a7;
-
 }
-
 
 .input-label {
 	font-size: 1.2em;
@@ -102,6 +108,15 @@ body,html {
 .input-label__active {
 	transform: translateY(-115%) scale(.75);
 	color: #0097a7;
+}
+
+.input-suffix {
+	position: absolute;
+	font-size: 1.2em;
+	transform: scale(.75);
+	transform-origin: bottom left;
+	color: rgba(0,0,0, .4);
+	margin-top: -3px;
 }
 
 .imc-btn {

@@ -20,11 +20,18 @@ function getValue () {
 };
 
 function IMCCalculator (weight, height) {
-	height = height / 100;
+
+	if (height <= 2) {
+		height = height;
+		IMC.height = height * 100;
+	}
+	else {
+		height = height / 100;
+		IMC.height = height * 100;
+	}
 
 	imc = weight / (height * height);
 
-	IMC.height = height * 100;
 	IMC.value = imc.toString().substring(0,4)
 
 	comparator()
@@ -122,9 +129,6 @@ document.querySelector('#clear').addEventListener('click', eraseData);
 
 
 const label = document.querySelectorAll('.input-label');
-
-// inputs[0].addEventListener('focus', focus);
-// inputs[0].addEventListener('blur', blur);
 
 function focus () {
 	this.parentNode.children[0].classList.add('input-label__active');
