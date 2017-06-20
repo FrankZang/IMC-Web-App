@@ -142,7 +142,7 @@ body,html {
     align-items: center;
     height: 400px;
     width: 95%;
-    margin-top: -170px
+    margin-top: -180px;
 }
 
 .result-card {
@@ -152,7 +152,7 @@ body,html {
     align-items: center;
     max-width: 330px;
     width: 100%;
-    height: 300px;
+    height: 320px;
     border-radius: 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
     background: #fff;
@@ -162,7 +162,7 @@ body,html {
     will-change: transform, opacity;
     pointer-events: none;
     position: relative;
-    z-index: 9
+    z-index: 9;
 }
 
 .result-card__visible {
@@ -247,6 +247,20 @@ body,html {
     transition: all .3s ease;
 }
 
+.card-footer {
+	width: 90%;
+	max-width: 350px;
+	text-align: start;
+	font-size: 12px;
+	margin-bottom: 8px;
+	color: rgba(0,0,0,.8);
+}
+
+.card-footer a {
+	text-decoration: none;
+	color: inherit;
+}
+
 @media screen and (min-width: 500px) {
     body {
         height:100vh;
@@ -256,12 +270,12 @@ body,html {
     }
 
     .content {
-        height: 500px;
+        height: 520px;
         max-width: 400px;
         background: #fff;
         padding: 20px;
         border-radius: 3px;
-        box-shadow: 0 2px 5px rgba(0,0,0,.3)
+        box-shadow: 0 2px 5px rgba(0,0,0,.3);
     }
 
     .instructions {
@@ -290,6 +304,11 @@ body,html {
 
     .clear:hover, .clear:focus {
     	background: rgba(0,0,0,.15);
+    }
+
+    .card-footer {
+        text-align: left;
+        margin: 0
     }
 }
 

@@ -34,7 +34,6 @@ class Calculator {
 	    let height = this.inputs[1].value;
 
 	    if (weight != 0 && height != 0) {
-
 		    if (height <= 2.0) {
 		        height = height;
 		        this.IMC.height = height * 100;
@@ -43,34 +42,34 @@ class Calculator {
 		        this.IMC.height = height * 100;
 		    }
 
+	    if (this.IMC.height % 2 != 0) {
+	    	this.IMC.height = this.IMC.height - 1;
+	    }
+
 		    let result = weight / (height * height);
 
 		    this.IMC.value = result.toString().substring(0, 4)
 
-		    this.comparator()	
+		    this.comparator()
 	    }
 	}
 
 	comparator () {
+
 	    if (this.IMC.height % 2 !== 0) {
 	        this.IMC.height = this.IMC.height - 1;
 	    }
-	    if (this.IMC.value < 18) {
+	    if (this.IMC.value < 18.5) {
 	        indice.innerHTML = weightReference.down;
 	        this.fill();
-	    } else if (this.IMC.value < 24) {
+	    } else if (this.IMC.value < 25) {
 	        indice.innerHTML = weightReference.ideal;
 	        this.fill();
-	    } else if (this.IMC.value < 29) {
-	        indice.innerHTML = weightReference.ideal;
+	    } else if (this.IMC.value < 30) {
+	        indice.innerHTML = weightReference.high;
 	        this.fill();
-	    } else if (this.IMC.value < 34) {
-	        indice.innerHTML = weightReference.above;
-	        this.fill();
-	    } else if (this.IMC.value < 39) {
-	        indice.innerHTML = weightReference.above;
-	        this.fill();
-	    } else if (this.IMC.value > 40) {
+	    }
+	     else if (this.IMC.value > 30) {
 	        indice.innerHTML = weightReference.above;
 	        this.fill();
 	    }
