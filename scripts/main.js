@@ -100,7 +100,6 @@ class Calculator {
 	originalState () {
 
 		for (let i = 0; i < this.inputs.length; i++){
-			console.log(i)
 			this.inputs[i].value = '';
 			this.label[i].classList.remove('input-label__active');
 		};
