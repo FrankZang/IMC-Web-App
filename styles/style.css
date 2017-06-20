@@ -244,7 +244,7 @@ body,html {
     cursor: pointer;
     position: absolute;
     opacity: .8;
-    transition: box-shadow .3s ease;
+    transition: all .3s ease;
 }
 
 @media screen and (min-width: 500px) {
@@ -284,9 +284,12 @@ body,html {
     }
 
     .clear {
-        background: transparent;
-	    box-shadow: none;
+        background: rgba(0,0,0,.1);
+        box-shadow: none;
+    }
 
+    .clear:hover, .clear:focus {
+    	background: rgba(0,0,0,.15);
     }
 }
 
