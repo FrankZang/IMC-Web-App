@@ -21,7 +21,7 @@ body,html {
     opacity: .8
 }
 
-.header-h1 {
+.header--h1 {
     width: 90%;
     padding: 0
 }
@@ -44,18 +44,18 @@ body,html {
     pointer-events: visible
 }
 
-.intro__out {
+.intro_out {
     opacity: 0;
     pointer-events: none
 }
 
-.instructions {
+.intro__text {
     max-width: 300px;
     width: 100%;
     margin: 30px auto
 }
 
-.input-area {
+.intro__form-area {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -65,7 +65,7 @@ body,html {
     width: 100%
 }
 
-.form {
+.intro__form {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -73,11 +73,11 @@ body,html {
     margin: 10px 0
 }
 
-.input-box {
+.intro__input-box {
     display: inline
 }
 
-.input {
+.intro__input {
     border: none;
     outline: none;
     width: 100%;
@@ -93,19 +93,19 @@ body,html {
     caret-color: #0097a7
 }
 
-.input:hover {
+.intro__input:hover {
     border-bottom: 2px solid rgba(0, 0, 0, .5)
 }
 
-.input:focus {
+.intro__input:focus {
     border-color: #0097a7
 }
 
-.input-label {
+.intro__input-label {
     font-size: 1.2em;
     font-weight: 400;
     font-size: 1em;
-    color: rgba(0,0,0, .4);
+    color: #a3a3a3;
     transform: translateY(35%);
     transform-origin: bottom left;
     cursor: text;
@@ -115,7 +115,7 @@ body,html {
     will-change: transform
 }
 
-.input-label__active {
+.intro__input-label_active {
     transform: translateY(-115%) scale(.75);
 }
 
@@ -132,7 +132,8 @@ body,html {
     font-size: .8em;
     font-weight: 700;
     cursor: pointer;
-    transition: all .3s ease
+    transition: all .3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .result-area {
@@ -165,7 +166,7 @@ body,html {
     z-index: 9;
 }
 
-.result-card__visible {
+.result-card_visible {
     opacity: 1;
     transform: translateY(-5%);
     pointer-events: visible
@@ -196,7 +197,7 @@ body,html {
     width: 100%
 }
 
-.weight-container p {
+.weight-container__p {
     width: 100px
 }
 
@@ -225,7 +226,7 @@ body,html {
     pointer-events: none
 }
 
-.erase__active {
+.erase_active {
     transform: scale(1);
     pointer-events: visible
 }
@@ -279,11 +280,11 @@ body,html {
         box-shadow: 0 2px 5px rgba(0,0,0,.3);
     }
 
-    .instructions {
+    .intro__text {
         margin: 30px auto
     }
 
-    .header,.instructions,.input-area {
+    .header,.intro__text,.intro__form-area {
         max-width: 350px
     }
 
@@ -294,17 +295,12 @@ body,html {
         max-width: 350px;
     }
 
-    .result-card__visible {
+    .result-card_visible {
         transform: translateY(-10%)
     }
 
     .clear {
-        background: rgba(0,0,0,.1);
         box-shadow: none;
-    }
-
-    .clear:hover, .clear:focus {
-    	background: rgba(0,0,0,.15);
     }
 
     .card-footer {

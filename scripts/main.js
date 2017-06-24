@@ -6,7 +6,7 @@ class Calculator {
 
 		this.IMC = {};
 
-		this.inputs = document.querySelectorAll('.input');
+		this.inputs = document.querySelectorAll('.intro__input');
 		this.btn = document.querySelector('#btn');
 		this.weightOut = document.querySelectorAll('.weight');
 		this.imcOut = document.querySelector('#imc');
@@ -14,7 +14,7 @@ class Calculator {
 		this.eraseBtn = document.querySelector('.erase');
 		this.intro = document.querySelector('.intro');
 		this.result_card = document.querySelector('.result-card');
-		this.label = document.querySelectorAll('.input-label');
+		this.label = document.querySelectorAll('.intro__input-label');
 
 		this.getValue = this.getValue.bind(this);
 		this.comparator = this.comparator.bind(this);
@@ -34,8 +34,7 @@ class Calculator {
 	    let height = this.inputs[1].value;
 
 	    if (weight != 0 && height != 0) {
-		    if (height <= 2.0) {
-		        height = height;
+		    if (height <= 2) {
 		        this.IMC.height = height * 100;
 		    } else {
 		        height = height / 100;
@@ -43,22 +42,28 @@ class Calculator {
 		    }
 
 	    if (this.IMC.height % 2 != 0) {
-	    	this.IMC.height = this.IMC.height - 1;
+	    	this.IMC.height = this.IMC.height -1;
 	    }
 
-		    let result = weight / (height * height);
 
-		    this.IMC.value = result.toString().substring(0, 4)
+		if (typeof(dataTable[this.IMC.height]) != 'undefined') {
 
-		    this.comparator()
+			    let result = weight / (height * height);
+
+			    this.IMC.value = result.toFixed(1);
+
+			    this.comparator()
+
+		}
+		else {
+			console.log("callback")
+		}
+
 	    }
 	}
 
 	comparator () {
 
-	    if (this.IMC.height % 2 !== 0) {
-	        this.IMC.height = this.IMC.height - 1;
-	    }
 	    if (this.IMC.value < 18.5) {
 	        indice.innerHTML = weightReference.down;
 	        this.fill();
@@ -78,31 +83,30 @@ class Calculator {
 	}
 
     fill () {
-        this.weightOut[0].innerHTML = dataTable[`${this.IMC.height}`].min + ' kg';
-        this.weightOut[1].innerHTML = dataTable[`${this.IMC.height}`].max + ' kg';
+        this.weightOut[0].innerHTML = `${dataTable[this.IMC.height].min} kg`;
+        this.weightOut[1].innerHTML = `${dataTable[this.IMC.height].max} kg`;
         this.imcOut.innerHTML = this.IMC.value;
     }
 
     showCard () {
-	    this.intro.classList.add('intro__out');
-	    this.result_card.classList.add('result-card__visible');
-	    this.eraseBtn.classList.add('erase__active');
+	    this.intro.classList.add('intro_out');
+	    this.result_card.classList.add('result-card_visible');
+	    this.eraseBtn.classList.add('erase_active');
 	    this.originalState();
 	}
 
 	hideCard () {
-	    this.result_card.classList.remove('result-card__visible');
-	    this.intro.classList.remove('intro__out');
-	    this.eraseBtn.classList.remove('erase__active');
+	    this.result_card.classList.remove('result-card_visible');
+	    this.intro.classList.remove('intro_out');
+	    this.eraseBtn.classList.remove('erase_active');
 	}
 
 	originalState () {
-
 		for (let i = 0; i < this.inputs.length; i++){
 			this.inputs[i].value = '';
-			this.label[i].classList.remove('input-label__active');
+			this.label[i].classList.remove('intro__input-label_active');
 		};
-}
+	}
 
 };
 
@@ -110,8 +114,8 @@ new Calculator();
 
 class inputState {
 	constructor () {
-		this.label = document.querySelectorAll('.input-label');
-		this.inputs = document.querySelectorAll('.input');
+		this.label = document.querySelectorAll('.intro__input-label');
+		this.inputs = document.querySelectorAll('.intro__input');
 
 		this.focusListeners = this.focusListeners.bind(this);
 
@@ -123,18 +127,18 @@ class inputState {
 	    e.addEventListener('blur', this.blur)
 	}
 
-	focus (e) {
-		this.parentNode.children[0].classList.add('input-label__active');
+	focus () {
+		this.parentNode.children[0].classList.add('intro__input-label_active');
 	    this.parentNode.children[0].style.color = '#0097a7'
 	}
 
-	blur (e) {
-		if (this.value == 0) {
-	        this.parentNode.children[0].classList.remove('input-label__active');
-	        this.parentNode.children[0].style.color = 'rgba(0,0,0, .5)'
+	blur () {
+		if (!this.value) {
+	        this.parentNode.children[0].classList.remove('intro__input-label_active');
+	        this.parentNode.children[0].style.color = '#a3a3a3'
 	    }
 	    else {
-	        this.parentNode.children[0].style.color = 'rgba(0,0,0, .5)'
+	        this.parentNode.children[0].style.color = '#a3a3a3'
 	    }
 	}
 };

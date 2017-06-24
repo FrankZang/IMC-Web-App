@@ -14,24 +14,23 @@
 <body>
     <main class="content">
         <header class="header">
-            <h1 class="header-h1">IMC</h1>
+            <h1 class="header--h1">IMC</h1>
         </header>
 
         <div class="intro">
-            <div class="instructions">
+            <div class="intro__text">
                 <p>Insira seus dados abaixo.</p>
             </div>
 
-            <div class="input-area">
-
-                <form class="form">
-                    <div class="input-box">
-                        <div class="input-label">Peso</div>
-                        <input class="input" type="number">
+            <div class="intro__form-area">
+                <form class="intro__form">
+                    <div class="intro__input-box">
+                        <div class="intro__input-label">Peso</div>
+                        <input class="intro__input" type="number">
                     </div>
-                    <div class="input-box">
-                        <div class="input-label">Altura</div>
-                        <input class="input" type="number">
+                    <div class="intro--input-box">
+                        <div class="intro__input-label">Altura</div>
+                        <input class="intro__input" type="number">
                     </div>
                 </form>
                 <button type="button" class="imc-btn" id="btn">CALCULAR</button>
@@ -47,10 +46,10 @@
                 </div>
                 <div class="scale">
                     <div class="weight-container">
-                        <p>Peso mínimo</p> <span class="scale-separator"></span> <span class="weight"></span>
+                        <p class="weight-container__p">Peso mínimo</p> <span class="scale-separator"></span> <span class="weight"></span>
                     </div>
                     <div class="weight-container">
-                        <p>Peso máximo</p> <span class="scale-separator"></span> <span class="weight"></span>
+                        <p class="weight-container__p">Peso máximo</p> <span class="scale-separator"></span> <span class="weight"></span>
                     </div>
                 </div>
                 <footer class="card-footer">Fonte: <a href="http://portalsaude.saude.gov.br/dicas-de-saude/o-que-e-imc.html" target="_blanck">Ministério da Saúde</a></footer>
