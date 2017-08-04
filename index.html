@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <title>Índice de Massa Corporal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#0097a7">
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="images/fav-icon.png" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-</head>
-
-<body>
-    <main class="content">
-        <header class="header">
+   <head>
+      <title>Índice de Massa Corporal</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <meta name="theme-color" content="#0097a7">
+      <link rel="stylesheet" href="styles/style.css">
+      <link href="images/fav-icon.png" rel="icon" type="image/x-icon" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   </head>
+   <body>
+      <main class="content">
+         <header class="header">
             <h2 class="header--h1">Calculadora IMC</h2>
-        </header>
-
-        <div class="intro">
-
+         </header>
+         <div class="intro">
             <div class="cards">
-             <div class="floating-card">
-            <div class="intro__text">
-                <p>Insira seus dados abaixo:</p>
-            </div>
-                <form class="intro__form">
-                    <div class="intro__input-box">
+               <div class="floating-card">
+                  <div class="intro__text">
+                     <p>Insira seus dados abaixo:</p>
+                  </div>
+                  <form class="intro__form">
+                     <div class="intro__input-box">
                         <div class="input-label">Peso</div>
                         <input class="intro__input" type="number">
-                    </div>
-                    <div class="intro__input-box">
+                     </div>
+                     <div class="intro__input-box">
                         <div class="input-label">Altura</div>
                         <input class="intro__input" type="number">
-                    </div>
-                </form>
-            </div> 
-            <div class="floating-card card-filled">
-                <div class="result">
-                    <p  class="imc" id="imc"></p>
-                    <p class="imc-label">IMC</p>
-                </div>
-                <div class="comment">
-                    <p class="indice" id="indice"></p>
-                    <p class="ideal">Seu peso ideal está entre <span class="weight"></span> e <span class="weight"></span> kgs.</p>
-                </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="floating-card card-filled">
+                  <div class="result">
+                     <p  class="imc" id="imc"></p>
+                     <p class="imc-label">IMC</p>
+                  </div>
+                  <div class="comment">
+                     <p class="indice" id="indice"></p>
+                     <p class="ideal">Seu peso ideal está entre <span class="weight"></span> e <span class="weight"></span> kgs.</p>
+                  </div>
+               </div>
             </div>
-                
+            <div class="buttons-area">
+               <button type="button" class="calculate-btn material-button" id="btn">
+                  <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0 0h24v24H0z" fill="none"/>
+                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+               </button>
+               <button type="button" class="calculate-btn erase btn--off">
+                  <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M0 0h24v24H0z" fill="none"/>
+                     <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                  </svg>
+               </button>
             </div>
-        <div class="buttons-area">
-                <button type="button" class="calculate-btn material-button" id="btn"><svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-</svg>
-</button>
-                <button type="button" class="calculate-btn erase btn--off"><svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
-</svg></button>
-
-        </div>
-
-        </div>
-    </main>
-    <script type="text/javascript" src="scripts/main.js" async></script>
-    <script type="text/javascript" src="scripts/table.js" async></script>
-</body>
-
+         </div>
+      </main>
+      <script type="text/javascript" src="scripts/main.js" async></script>
+      <script type="text/javascript" src="scripts/table.js" async></script>
+   </body>
 </html>
