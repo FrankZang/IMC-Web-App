@@ -14,7 +14,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100px;
+    height: 85px;
     width: 100%;
 }
 
@@ -66,11 +66,12 @@ html, body {
 
 .card-filled {
     transform: translateY(8%);
-      opacity: 0;     
+    opacity: 0;
     pointer-events: none;
     background: #40c4ff;
     z-index: 1;
-    align-items: flex-start
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .card--visible {
@@ -165,8 +166,8 @@ html, body {
 }
 
 .indice {
-    font-size: 1.2em;
-    margin: 25px 0 10px;
+    font-size: 1.5em;
+    margin: 0 0 15px;
 }
 
 .imc {
@@ -182,6 +183,7 @@ html, body {
 
 .comment {
     text-align: left;
+    margin-bottom: 22px;
 }
 
 .ideal {
