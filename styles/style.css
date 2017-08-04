@@ -1,311 +1,180 @@
-body,html {
+html, body {
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    color: rgba(0, 0, 0, .87);
-    background: #f5f5f5;
+}
+
+.content {
+    width: 100%;
     height: 100vh;
-    min-height: 250px
+    background: #F5F5F5;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, .8)
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100px;
     width: 100%;
-    max-width: 300px;
-    height: 59px;
-    margin: auto;
-    font-size: 12px;
-    color: #0097a7;
-    opacity: .8
 }
 
 .header--h1 {
-    width: 90%;
-    padding: 0
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 350px;
-    min-height: 350px;
-    margin: auto
+    margin: 0 auto;
+    padding: 10px;
+    letter-spacing: 1px;
+    color: rgba(53, 98, 112, 0.8);
 }
 
 .intro {
-    width: 100%;
-    transition: all .5s ease;
-    will-change: transform, opacity;
-    pointer-events: visible
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.intro_out {
+.cards {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-card {
+    background: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    width: 230px;
+    height: 140px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px 2px rgba(46, 61, 73, 0.25);
+    transition: all .3s ease-in-out;
+    position: absolute;
+    z-index: 2;
+    will-change: opacity transform;
+}
+
+.card--hidden {
+    box-shadow: 0 2px 10px 2px rgba(46, 61, 73, 0.25);
+    transform: translateY(8%);
     opacity: 0;
-    pointer-events: none
+    pointer-events: none;   
 }
 
-.intro__text {
-    max-width: 300px;
-    width: 100%;
-    margin: 30px auto
+.card-filled {
+    transform: translateY(8%);
+    opacity: 0;   
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+    background: #40c4ff;
+    height: 150px;
+    padding: 15px 20px;
+    z-index: 1;
 }
 
-.intro__form-area {
+.card--visible {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-end;
-    margin: 50px auto 20px;
-    max-width: 300px;
-    width: 100%
+    transform: translateY(0);
+    box-shadow: 0 10px 30px 2px rgba(46, 61, 73, 0.25);
+    opacity: 1;
+    pointer-events: visible;
 }
 
 .intro__form {
+    width: 170px;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin: 10px 0
+    justify-content: space-between
 }
 
 .intro__input-box {
-    display: inline
+    display: flex;
+    height: 60px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .intro__input {
+    width: 50px;
+    padding: 9px 10px;
     border: none;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, .1);
     outline: none;
-    width: 100%;
-    max-width: 130px;
-    border-bottom: 2px solid rgba(0, 0, 0, .2);
-    background: transparent;
-    color: rgba(0, 0, 0, .8);
-    font-size: 1.2em;
-    padding: 4px 0 2px;
-    transition: all .5s ease;
-    position: relative;
-    z-index: 2;
-    caret-color: #0097a7
+    text-align: center;
 }
 
-.intro__input:hover {
-    border-bottom: 2px solid rgba(0, 0, 0, .5)
-}
-
-.intro__input:focus {
-    border-color: #0097a7
-}
-
-.intro__input-label {
-    font-size: 1.2em;
-    font-weight: 400;
-    font-size: 1em;
+.input-label {
     color: #a3a3a3;
-    transform: translateY(35%);
-    transform-origin: bottom left;
-    cursor: text;
+    transition: all 3s ease-in-out;
+}
+
+.buttons-area {
+    display: flex;
+    justify-content: center
+}
+
+.calculate-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px 2px rgba(46, 61, 73, 0.25);
+    background: #00e676;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
     position: absolute;
     z-index: 1;
-    transition: all .3s ease;
-    will-change: transform
+    transition: all .3s ease-in-out;
+    transform: scaleX()(1);
+    transform-origin: center;
+    will-change: transform;
 }
 
-.intro__input-label_active {
-    transform: translateY(-115%) scale(.75);
-}
-
-.imc-btn {
-    margin: 50px 0 0 0;
-    padding: 10px 15px;
-    background: #0097a7;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: .8em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all .3s ease;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.result-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 400px;
-    width: 95%;
-    margin-top: -180px;
-}
-
-.result-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 330px;
-    width: 100%;
-    height: 320px;
-    border-radius: 3px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
-    background: #fff;
+.btn--off {
+    transform: scaleX(0);
     opacity: 0;
-    transform: translateY(30%);
-    transition: all .5s ease;
-    will-change: transform, opacity;
     pointer-events: none;
-    position: relative;
-    z-index: 9;
-}
 
-.result-card_visible {
-    opacity: 1;
-    transform: translateY(-5%);
-    pointer-events: visible
-}
-
-.result {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-}
-
-.indice {
-    font-size: 1.8em;
-    color: #0097a7;
-    opacity: .8
-}
-
-.comment,.scale {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.weight-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%
-}
-
-.weight-container__p {
-    width: 100px
-}
-
-.scale-separator {
-    width: 5px;
-    height: 5px;
-    background: #0097a7;
-    border-radius: 5px;
-    opacity: .8
-}
-
-.indice,.weight {
-    color: #0097a7
 }
 
 .erase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    transform: scale(0);
-    transition: transform .5s ease;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-    pointer-events: none
+    width: 136.9px;
+    background: #ff1744;
+
 }
 
-.erase_active {
-    transform: scale(1);
-    pointer-events: visible
+.result {
+    /* width: 100%; */
+    font-size: 2em;
+    font-weight: 700;
 }
 
-.clear {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    outline: none;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3);
-    border-radius: 100%;
-    cursor: pointer;
-    position: absolute;
-    opacity: .8;
-    transition: all .3s ease;
+.indice {
+    font-size: 1.3em;
+    margin: 10px 0 0;
 }
 
-.card-footer {
-	width: 90%;
-	max-width: 350px;
-	text-align: start;
-	font-size: 12px;
-	margin-bottom: 12px;
-	color: rgba(0,0,0,.8);
+.imc {
+    margin: 0 auto 8px 0;
 }
 
-.card-footer a {
-	text-decoration: none;
-	color: inherit;
+.comment {
+    text-align: center;
 }
 
-@media screen and (min-width: 500px) {
-    body {
-        height:100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #f5f5f5;
-    }
-
-    .content {
-        height: 520px;
-        max-width: 400px;
-        background: #fff;
-        padding: 20px;
-        border-radius: 3px;
-        box-shadow: 0 2px 5px rgba(0,0,0,.3);
-    }
-
-    .intro__text {
-        margin: 30px auto
-    }
-
-    .header,.intro__text,.intro__form-area {
-        max-width: 350px
-    }
-
-    .result-card {
-        box-shadow: none;
-        border-radius: 0;
-        border-top: 1px solid rgba(0,0,0,.3);
-        max-width: 350px;
-    }
-
-    .result-card_visible {
-        transform: translateY(-10%)
-    }
-
-    .clear {
-        box-shadow: none;
-    }
-
-    .card-footer {
-        text-align: left;
-        margin: 0
-    }
+.ideal {
+    margin: 8px auto auto;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .6);
 }
-

@@ -15,18 +15,32 @@ class Calculator {
 		this.intro = document.querySelector('.intro');
 		this.result_card = document.querySelector('.result-card');
 		this.label = document.querySelectorAll('.intro__input-label');
+		this.card = document.querySelectorAll('.floating-card')
 
 		this.getValue = this.getValue.bind(this);
 		this.comparator = this.comparator.bind(this);
-		this.hideCard = this.hideCard.bind(this);
 		this.originalState = this.originalState.bind(this);
+		this.animationend = this.animationend.bind(this);
 
 		this.listeners();
 	}
 
 	listeners () {
 		this.btn.addEventListener('click', this.getValue);
-		this.eraseBtn.addEventListener('click', this.hideCard)
+		this.eraseBtn.addEventListener('click', this.originalState);
+		this.card[0].addEventListener("transitionend", this.animationend);
+
+	}
+
+	// removeListener () {
+	// 	console.log("adjsaijd")
+	// }
+
+	animationend () {
+		this.card[1].classList.add('card--visible');
+		this.btn.classList.add('btn--off');
+		this.eraseBtn.classList.remove('btn--off');
+		this.card[0].removeEventListener('transitionend', this.animationend)
 	}
 
 	getValue () {
@@ -48,6 +62,8 @@ class Calculator {
 
 		if (typeof(dataTable[this.IMC.height]) != 'undefined') {
 
+			this.card[0].classList.add('card--hidden');
+
 			    let result = weight / (height * height);
 
 			    this.IMC.value = result.toFixed(1);
@@ -66,46 +82,28 @@ class Calculator {
 
 	    if (this.IMC.value < 18.5) {
 	        indice.innerHTML = weightReference.down;
-	        this.fill();
+	        
 	    } else if (this.IMC.value < 25) {
 	        indice.innerHTML = weightReference.ideal;
-	        this.fill();
+	        
 	    } else if (this.IMC.value < 30) {
 	        indice.innerHTML = weightReference.high;
-	        this.fill();
+	        
 	    }
 	     else if (this.IMC.value > 30) {
 	        indice.innerHTML = weightReference.above;
-	        this.fill();
+	        
 	    }
 
-	    this.showCard();
-	}
-
-    fill () {
-        this.weightOut[0].innerHTML = `${dataTable[this.IMC.height].min} kg`;
-        this.weightOut[1].innerHTML = `${dataTable[this.IMC.height].max} kg`;
-        this.imcOut.innerHTML = this.IMC.value;
-    }
-
-    showCard () {
-	    this.intro.classList.add('intro_out');
-	    this.result_card.classList.add('result-card_visible');
-	    this.eraseBtn.classList.add('erase_active');
-	    this.originalState();
-	}
-
-	hideCard () {
-	    this.result_card.classList.remove('result-card_visible');
-	    this.intro.classList.remove('intro_out');
-	    this.eraseBtn.classList.remove('erase_active');
+	    // this.showCard();
 	}
 
 	originalState () {
-		for (let i = 0; i < this.inputs.length; i++){
-			this.inputs[i].value = '';
-			this.label[i].classList.remove('intro__input-label_active');
-		};
+		this.card[0].classList.add('card--visible');
+		this.card[1].classList.remove('card--visible');
+		this.btn.classList.remove('btn--off');
+		this.eraseBtn.classList.add('btn--off');
+		
 	}
 
 };
@@ -129,7 +127,7 @@ class inputState {
 
 	focus () {
 		this.parentNode.children[0].classList.add('intro__input-label_active');
-	    this.parentNode.children[0].style.color = '#0097a7'
+	    this.parentNode.children[0].style.color = 'rgba(53, 98, 112, 0.8)'
 	}
 
 	blur () {
@@ -143,4 +141,38 @@ class inputState {
 	}
 };
 
-new inputState();
+// new inputState();
+
+// class Ripple {
+//   constructor () {
+//     this.btn = document.querySelectorAll('.material-button');
+//     this.wave = document.createElement('div');
+//     this.btnSize = Math.max(this.btn[0].clientHeight, this.btn[0].clientWidth);
+    
+//     this.onclick = this.onclick.bind(this);
+    
+//     this.evtListeners()
+//   }
+  
+//   evtListeners () {
+//     Array.prototype.forEach.call(this.btn, (e) => {
+//       e.addEventListener('click', this.onclick)
+//     })
+//   }
+  
+//   onclick (e) {
+//   	console.log(e.clientX - this.btnSize / 2 + "px")
+//     this.wave.style.width = this.wave.style.height = this.btnSize + "px";
+//     this.wave.style.left = e.clientX / 2 - this.btnSize - 6 + "px";
+//     this.wave.style.top = e.clientY - (this.btnSize * 2) + 20 + "px";
+//     e.currentTarget.appendChild(this.wave);
+//     this.wave.classList.add('ripple-active');
+
+//   }
+// }
+
+// new Ripple();
+
+// document.addEventListener('click', e => {
+// 	console.log(e.clientX)
+// })

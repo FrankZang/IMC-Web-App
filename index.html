@@ -14,54 +14,43 @@
 <body>
     <main class="content">
         <header class="header">
-            <h1 class="header--h1">IMC</h1>
+            <h2 class="header--h1">Calculadora IMC</h2>
         </header>
 
         <div class="intro">
-            <div class="intro__text">
-                <p>Insira seus dados abaixo.</p>
-            </div>
 
-            <div class="intro__form-area">
+            <div class="cards">
+             <div class="floating-card">
+            <div class="intro__text">
+                <p>Insira seus dados abaixo:</p>
+            </div>
                 <form class="intro__form">
                     <div class="intro__input-box">
-                        <div class="intro__input-label">Peso</div>
+                        <div class="input-label">Peso</div>
                         <input class="intro__input" type="number">
                     </div>
-                    <div class="intro--input-box">
-                        <div class="intro__input-label">Altura</div>
+                    <div class="intro__input-box">
+                        <div class="input-label">Altura</div>
                         <input class="intro__input" type="number">
                     </div>
                 </form>
-                <button type="button" class="imc-btn" id="btn">CALCULAR</button>
-            </div>
-        </div>
-        <div class="result-area">
-            <div class="result-card">
+            </div> 
+            <div class="floating-card card-filled">
                 <div class="result">
-                    <h1 class="indice" id="indice"></h1>
+                    <p  class="imc" id="imc">18.5</p>
                 </div>
                 <div class="comment">
-                    <p>Seu Índice de Massa Corporal é <span class="imc" id="imc"></span>.</p>
+                    <p class="indice" id="indice">Peso ideal.</p>
+                    <p class="ideal">Seu peso ideal está entre <span class="weight">23</span> e <span class="weight">23</span> </p>
                 </div>
-                <div class="scale">
-                    <div class="weight-container">
-                        <p class="weight-container__p">Peso mínimo</p> <span class="scale-separator"></span> <span class="weight"></span>
-                    </div>
-                    <div class="weight-container">
-                        <p class="weight-container__p">Peso máximo</p> <span class="scale-separator"></span> <span class="weight"></span>
-                    </div>
-                </div>
-                <footer class="card-footer">Fonte: <a href="http://portalsaude.saude.gov.br/dicas-de-saude/o-que-e-imc.html" target="_blanck">Ministério da Saúde</a></footer>
             </div>
-            <div class="erase">
-                <button class="clear hidden" id="clear">
-                    <svg fill="#0097a7" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
-                    </svg>
-                </button>
+                
             </div>
+        <div class="buttons-area">
+                <button type="button" class="calculate-btn material-button" id="btn">CALCULAR</button>
+                <button type="button" class="calculate-btn erase btn--off">REFAZER</button>
+
+        </div>
 
         </div>
     </main>
