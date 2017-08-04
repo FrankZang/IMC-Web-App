@@ -44,7 +44,7 @@ html, body {
     background: #fff;
     padding: 20px;
     margin: 30px auto;
-    width: 250px;
+    width: 260px;
     height: 155px;
     border-radius: 15px;
     display: flex;
@@ -185,8 +185,7 @@ html, body {
 }
 
 .ideal {
-    margin: 5px auto -8px;
+    margin: 5px 0 -8px;
     font-size: 1rem;
     line-height: 1.5;
-    /* color: rgba(0, 0, 0, .6); */
 }
