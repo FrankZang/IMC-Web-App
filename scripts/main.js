@@ -53,12 +53,12 @@ class Calculator {
 				this.card[0].classList.add('card--hidden');
 				this.btn.classList.add('btn--off');
 
-			}, 300)
+			}, 200)
 
 			setTimeout(()=>{
 				this.card[1].classList.add('card--visible');
 				this.eraseBtn.classList.remove('btn--off');
-			}, 600)
+			}, 500)
 
 			    let result = weight / (height * height);
 
@@ -78,6 +78,7 @@ class Calculator {
 
 	    if (this.IMC.value < 18.5) {
 	        indice.innerHTML = weightReference.down;
+			this.fill()
 	        
 	    } else if (this.IMC.value < 25) {
 			indice.innerHTML = weightReference.ideal;
@@ -85,10 +86,12 @@ class Calculator {
 	        
 	    } else if (this.IMC.value < 30) {
 	        indice.innerHTML = weightReference.high;
+			this.fill()
 	        
 	    }
 	     else if (this.IMC.value > 30) {
 	        indice.innerHTML = weightReference.above;
+			this.fill()
 	        
 	    }
 	}
@@ -105,14 +108,14 @@ class Calculator {
 		setTimeout(()=>{
 			this.card[0].classList.remove('card--hidden');
 			this.card[0].classList.add('card--visible');
+		this.btn.classList.remove('btn--off');
 
-		}, 600)
+		}, 500)
 
 		setTimeout(()=>{
 		this.card[1].classList.remove('card--visible');
-		this.btn.classList.remove('btn--off');
 		this.eraseBtn.classList.add('btn--off');
-		}, 300)
+		}, 200)
 	
 	}
 
